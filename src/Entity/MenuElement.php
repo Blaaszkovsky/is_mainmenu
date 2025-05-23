@@ -145,6 +145,7 @@ class MenuElement
         $this->isRoot = false;
         $this->displayMobile = true;
         $this->displayDesktop = true;
+        $this->gridType = 'col_12';
     }
 
     /**
