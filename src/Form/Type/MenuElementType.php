@@ -187,11 +187,6 @@ class MenuElementType extends TranslatorAwareType
                 'locales' => $this->locales,
                 'required' => true,
             ])
-            ->add('image_preview', TranslatableType::class, [
-                'type' => ImagePreviewType::class,
-                'required' => false,
-                'label' => $this->trans('Banner image preview', TranslationDomains::TRANSLATION_DOMAIN_ADMIN),
-            ])
             ->add('image', TranslatableType::class, [
                 'type' => FileType::class,
                 'label' => $this->trans('Banner image', TranslationDomains::TRANSLATION_DOMAIN_ADMIN),
@@ -208,6 +203,14 @@ class MenuElementType extends TranslatorAwareType
                 'locales' => $this->locales,
                 'required' => true,
             ]);
+
+        if (!empty($options['data']['image_preview']) && $options['data']['image_preview']) {
+            $builder->add('image_preview', TranslatableType::class, [
+                'type' => ImagePreviewType::class,
+                'required' => false,
+                'label' => $this->trans('Banner image preview', TranslationDomains::TRANSLATION_DOMAIN_ADMIN),
+            ]);
+        }
 
         return $builder;
     }
