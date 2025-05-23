@@ -89,6 +89,7 @@ class MenuListGridDefinitionFactory extends AbstractGridDefinitionFactory
                     ->setName($this->trans->trans('ID', [], 'Admin.Global'))
                     ->setOptions([
                         'field' => 'id_menu_element',
+                        'alignment' => 'left',
                     ])
             )
             ->add(
